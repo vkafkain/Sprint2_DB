@@ -5,16 +5,20 @@ USE optica;
 CREATE TABLE proveidors (
     id_proveidors INT NOT NULL AUTO_INCREMENT,
     nom VARCHAR(255) NOT NULL,
-    carrer VARCHAR(255),
-    numero INT,
-    porta INT,
-    ciutat VARCHAR(255),
-    codi_postal INT,
-    pais VARCHAR(255),
     telefon INT,
     fax INT,
     NIF VARCHAR(255) NOT NULL,
     PRIMARY KEY(id_proveidors)
+);
+CREATE TABLE adreça (
+    carrer VARCHAR(255),
+    numero INT,
+    pis INT,
+    porta INT,
+    ciutat VARCHAR(255),
+    codi_postar INT,
+    pais VARCHAR(255)
+    FOREIGN KEY (id_proveidors) REFERENCES proveidors (id_proveidors)
 );
 CREATE TABLE clients (
     id_clients INT NOT NULL AUTO_INCREMENT,
@@ -39,6 +43,8 @@ CREATE TABLE ulleres (
     marca VARCHAR(255),
     graduacio_dreta DECIMAL(10,0),
     graduacio_esquerra(10,0)
-    tipus_de_monstura size ENUM('flotant', 'pasta', 'metal·lica') NOT NULL,
-
-)
+    tipus_de_monstura ENUM('flotant', 'pasta', 'metal·lica') NOT NULL,
+    color_montura VARCHAR(255),
+    color_vidres VARCHAR(255),
+    preu DECIMAL(10,0)
+);
