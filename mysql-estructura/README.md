@@ -3,9 +3,8 @@
 
 Intrucccions d'ús: 🧙‍♂️
 
-Carpetes creades: 
 
--mysql-estructura : Aqui podem trobar els esquemes de MySQL en png amb la estructura de les diferents bases de dades creades i també els diferents Scripts.sql per executar.
+-mysql-estructura : Aqui podem trobar els esquemes de MySQL en jpeg i els Scripts.sql, amb el nom corresponent de la base de dades. 
 
 
 
