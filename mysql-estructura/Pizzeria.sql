@@ -59,11 +59,13 @@ CREATE TABLE comanda (
     client_id INT NOT NULL,
     botiga_id INT,
     empleat_id INT NOT NULL,
+    localitat_id INT NOT NULL,
     comanda_domicili_id INT,
     PRIMARY KEY(comanda_id),
     FOREIGN KEY(client_id) REFERENCES client(client_id),
     FOREIGN KEY(botiga_id) REFERENCES botiga(botiga_id),
     FOREIGN KEY(empleat_id) REFERENCES empleat(empleat_id),
+    foreign key(localitat_id) references localitat(localitat_id),
     FOREIGN KEY(comanda_domicili_id) REFERENCES comanda_domicili(comanda_domicili_id)
 );
 CREATE TABLE categoria_pizzes (
@@ -121,11 +123,11 @@ VALUES ('John', 'Wick', '33492192S', 675881124, 'cuiner', 1),
 ('Claudia', 'Martinez', '12334449Y', 71248222, 'cuiner', 4);
 INSERT INTO comanda_domicili (empleat_id, comanda_id)
 VALUES(3, 1), (4, 2), (5, 3), (6, 4);
-INSERT INTO comanda (data, hora, tipus_comanda, preu_total, client_id, botiga_id, empleat_id, comanda_domicili_id)
-VALUES('2021-02-12', '12:32:00', 'botiga', 33, 1, 1, 1, NULL),
-('2021-04-22', '14:02:00', 'botiga', 20, 2, 2, 2, NULL),
-('2021-01-03', '21:06:00', 'domicili', 12, 3, 3, 3, 1),
-('2021-02-13', '20:00:00', 'domicili', 120, 4, 4, 4, 2);
+INSERT INTO comanda (data, hora, tipus_comanda, preu_total, client_id, botiga_id, empleat_id, localitat_id, comanda_domicili_id)
+VALUES('2021-02-12', '12:32:00', 'botiga', 33, 1, 1, 1, 1, NULL),
+('2021-04-22', '14:02:00', 'botiga', 20, 2, 2, 2, 2, NULL),
+('2021-01-03', '21:06:00', 'domicili', 12, 3, 3, 3, 3, 1),
+('2021-02-13', '20:00:00', 'domicili', 120, 4, 4, 4, 4, 2);
 INSERT INTO categoria_pizzes (nom)
 VALUES('Especial'), ('La del mes'), ('Extra Picant'), ('Infantil');
 INSERT INTO productes (tipus_producte, nom, descripcio, imatge, preu, categoria_pizzes_id)
@@ -136,4 +138,16 @@ VALUES ('pizza', 'familiar', 'Pizza gran', NULL, 19, 1),
 INSERT INTO quantitat_producte(quantitat, productes_id, comanda_id)
 VALUES (3, 1, 1), (2, 2, 2), (1, 3, 3), (5, 4, 4);
 
+/* Llista quants productes del tipus 'begudes' s'han venut en una determinada localitat */
+SELECT COUNT(productes.tipus_producte)
+FROM productes
+JOIN quantitat_producte ON productes.productes_id = quantitat_producte.productes_id
+JOIN comanda ON comanda.comanda_id = quantitat_producte.comanda_id
+JOIN localitat ON localitat.localitat_id = comanda.localitat_id
+WHERE productes.tipus_producte = 'beguda' AND localitat.nom = 'Amposta';
 
+/* Llista quantes comandes ha efectuat un determinat empleat */
+SELECT COUNT(comanda.empleat_id)
+FROM comanda
+JOIN empleat ON empleat.empleat_id = comanda.empleat_id
+WHERE empleat.nom = 'Marçal' AND empleat.cognoms = 'Andreu';
