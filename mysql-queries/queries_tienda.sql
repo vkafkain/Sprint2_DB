@@ -35,4 +35,3 @@ SELECT DISTINCT * FROM fabricante JOIN producto ON fabricante.codigo = producto.
 SELECT * FROM fabricante LEFT JOIN producto ON fabricante.codigo = producto.codigo_fabricante;
 SELECT * FROM fabricante LEFT JOIN producto ON fabricante.codigo = producto.codigo_fabricante WHERE producto.codigo IS NULL;
 SELECT * FROM producto, fabricante WHERE producto.codigo_fabricante = fabricante.codigo AND fabricante.nombre = 'Lenovo';
-SELECT * FROM producto, fabricante WHERE producto.codigo_fabricante = fabricante.codigo AND producto.precio = (SELECT MAX(precio) FROM producto WHERE fabricante.nombre = 'Asus');
