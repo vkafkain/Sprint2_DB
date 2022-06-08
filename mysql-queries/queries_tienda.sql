@@ -3,7 +3,7 @@ SELECT nombre FROM producto;
 SELECT nombre, precio FROM producto;
 SELECT * FROM producto;
 SELECT nombre, precio, precio * 1.07 FROM producto;
-SELECT nombre AS 'nom de producto', precio AS euros, precio * 1.07 AS dolars FROM producto;
+SELECT nombre AS "nombre de producto", precio AS euros, precio * 1.07 AS dolars FROM producto;
 SELECT UPPER(nombre), precio FROM producto;
 SELECT LOWER(nombre), precio FROM producto;
 SELECT nombre, UPPER(SUBSTR(nombre, 1, 2)) FROM fabricante;
@@ -32,5 +32,7 @@ SELECT producto.nombre, producto.precio FROM producto INNER JOIN fabricante ON p
 SELECT producto.nombre, producto.precio FROM producto INNER JOIN fabricante ON producto.codigo_fabricante = fabricante.codigo WHERE fabricante.nombre LIKE '%w%';
 SELECT producto.nombre, producto.precio, fabricante.nombre FROM producto INNER JOIN fabricante ON producto.codigo_fabricante = fabricante.codigo WHERE producto.precio >= 180 ORDER BY producto.precio DESC, producto.nombre ASC;
 SELECT DISTINCT * FROM fabricante JOIN producto ON fabricante.codigo = producto.codigo_fabricante;
-SELECT fabricante.*, producto.* FROM fabricante LEFT JOIN producto ON fabricante.codigo = producto.codigo_fabricante;
-SELECT fabricante.*, producto.* FROM fabricante LEFT JOIN producto ON fabricante.codigo = producto.codigo_fabricante WHERE producto.codigo IS NULL;
+SELECT * FROM fabricante LEFT JOIN producto ON fabricante.codigo = producto.codigo_fabricante;
+SELECT * FROM fabricante LEFT JOIN producto ON fabricante.codigo = producto.codigo_fabricante WHERE producto.codigo IS NULL;
+SELECT * FROM producto, fabricante WHERE producto.codigo_fabricante = fabricante.codigo AND fabricante.nombre = 'Lenovo';
+SELECT * FROM producto, fabricante WHERE producto.codigo_fabricante = fabricante.codigo AND producto.precio = (SELECT MAX(precio) FROM producto WHERE fabricante.nombre = 'Asus');
