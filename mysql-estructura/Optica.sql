@@ -1,7 +1,8 @@
-
+-- CONFIG
 DROP DATABASE IF EXISTS optica;
 CREATE DATABASE optica;
 USE optica;
+-- SCHEMA CREATION
 CREATE TABLE adreça (
     adreça_id INT NOT NULL AUTO_INCREMENT,
     carrer VARCHAR(255),
@@ -65,7 +66,7 @@ CREATE TABLE ulleres (
     FOREIGN KEY(clients_id) REFERENCES clients(clients_id),
     FOREIGN KEY(empleat_id) REFERENCES empleat(empleat_id)
 );
-
+-- INSERT DATA TO DATABASE
 INSERT INTO adreça (carrer, numero, pis, porta, ciutat, codi_postal, pais)
 VALUES ('Avinguda de la piruleta',4, 1, 4, 'Sprindfield', 98765, 'EEUU'),
 ('Carrer petrixol',32, 4, 1, 'Barcelona', 08001, 'Espanya'),
@@ -107,17 +108,16 @@ VALUES(0.3, 0.1, 'metal·lica', 'verd', 'negre', 120, '2003-05-23', 1, 1, 1),
 (0.1, 0.3, 'metal·lica', 'negre', 'negre', 100, '2010-08-23', 5, 5, 1),
 (2.8, 3.3, 'flotant', 'blanc', 'negre', 240, '2015-05-23', 6, 1, 3);
 
+-- SELECT DATA FROM DATABASE
 SELECT clients.nom, ulleres.data_venda, ulleres.preu, marca.nom, ulleres.color_montura, ulleres.color_vidres, ulleres.tipus_de_montura
 FROM ulleres
 JOIN marca ON ulleres.marca_id = marca.marca_id
 JOIN clients ON clients.clients_id = ulleres.clients_id AND clients.nom = 'Jan Lopez';
-
 SELECT empleat.nom, ulleres.data_venda, marca.nom, ulleres.tipus_de_montura, ulleres.color_montura, ulleres.color_vidres, ulleres.preu
 FROM ulleres
 JOIN marca ON ulleres.marca_id = marca.marca_id
 JOIN empleat ON ulleres.empleat_id = empleat.empleat_id
 WHERE ulleres.empleat_id = 3 AND YEAR(data_venda) = 2015;
-
 SELECT proveidors.nom, proveidors.NIF, marca.nom, ulleres.data_venda
 FROM proveidors
 JOIN marca ON proveidors.proveidors_id = marca.proveidors_id
