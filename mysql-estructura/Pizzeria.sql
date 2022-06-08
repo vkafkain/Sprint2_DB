@@ -1,6 +1,8 @@
+-- CONFIG
 DROP DATABASE if EXISTS pizzeria;
 CREATE DATABASE pizzeria;
 USE pizzeria;
+-- SCHEMA CREATION
 CREATE TABLE provincia (
     provincia_id INT NOT NULL AUTO_INCREMENT,
     nom VARCHAR(255) NOT NULL,
@@ -93,7 +95,7 @@ CREATE TABLE quantitat_producte (
     FOREIGN KEY(productes_id) REFERENCES productes(productes_id),
     FOREIGN KEY(comanda_id) REFERENCES comanda(comanda_id)
 );
-
+-- INSERT DATA TO DATABASE
 INSERT INTO provincia(nom)
 VALUES ('Barcelona'), ('Tarragona'), ('Lleida'), ('Girona');
 INSERT INTO localitat (nom, provincia_id)
@@ -138,7 +140,7 @@ VALUES ('pizza', 'familiar', 'Pizza gran', NULL, 19, 1),
 INSERT INTO quantitat_producte(quantitat, productes_id, comanda_id)
 VALUES (3, 1, 1), (2, 2, 2), (1, 3, 3), (5, 4, 4);
 
-/* Llista quants productes del tipus 'begudes' s'han venut en una determinada localitat */
+-- SELECT DATA FROM DATABASE
 SELECT COUNT(productes.tipus_producte)
 FROM productes
 JOIN quantitat_producte ON productes.productes_id = quantitat_producte.productes_id
@@ -146,7 +148,6 @@ JOIN comanda ON comanda.comanda_id = quantitat_producte.comanda_id
 JOIN localitat ON localitat.localitat_id = comanda.localitat_id
 WHERE productes.tipus_producte = 'beguda' AND localitat.nom = 'Amposta';
 
-/* Llista quantes comandes ha efectuat un determinat empleat */
 SELECT COUNT(comanda.empleat_id)
 FROM comanda
 JOIN empleat ON empleat.empleat_id = comanda.empleat_id
