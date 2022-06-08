@@ -1,5 +1,4 @@
-
-#Entrega 2.1: Estructura de dades MySQL 📚
+# Entrega 2.1: Estructura de dades MySQL 📚
 
 Intrucccions d'ús: 🧙‍♂️
 

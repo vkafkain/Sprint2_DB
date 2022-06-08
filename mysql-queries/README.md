@@ -1,5 +1,4 @@
-#Entrega 2.2: MySQL queries 🔬   
-
+# Entrega 2.2: MySQL queries 🔬   
 
 Instruccions d'ús: 🧙‍♂️
 
