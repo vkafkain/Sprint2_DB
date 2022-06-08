@@ -1,7 +1,7 @@
 DROP DATABASE IF EXISTS universidad;
 CREATE DATABASE universidad CHARACTER SET utf8mb4;
 USE universidad;
- 
+
 CREATE TABLE departamento (
     id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(50) NOT NULL
@@ -20,7 +20,7 @@ CREATE TABLE persona (
     sexo ENUM('H', 'M') NOT NULL,
     tipo ENUM('profesor', 'alumno') NOT NULL
 );
- 
+
 CREATE TABLE profesor (
     id_profesor INT UNSIGNED PRIMARY KEY,
     id_departamento INT UNSIGNED NOT NULL,
@@ -28,7 +28,7 @@ CREATE TABLE profesor (
     FOREIGN KEY (id_departamento) REFERENCES departamento(id)
 );
  
- CREATE TABLE grado (
+CREATE TABLE grado (
     id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(100) NOT NULL
 );
