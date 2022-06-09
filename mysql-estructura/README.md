@@ -4,9 +4,9 @@
 
 Primer hem de tenir instalat MySQL afegeixo enllaços dels SO disponibles:
 
-     [Windows](https://dev.mysql.com/doc/refman/8.0/en/windows-installation.html '🪟')
-     [macOs](https://dev.mysql.com/doc/refman/8.0/en/macos-installation.html '🍏')
-     [Linux](https://dev.mysql.com/doc/refman/8.0/en/linux-installation.html '👽')
+[Windows](https://dev.mysql.com/doc/refman/8.0/en/windows-installation.html '🪟')
+[macOs](https://dev.mysql.com/doc/refman/8.0/en/macos-installation.html '🍏')
+[Linux](https://dev.mysql.com/doc/refman/8.0/en/linux-installation.html '👽')
 
 **Navegació per carpetes:**
 
