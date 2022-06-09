@@ -91,3 +91,4 @@ CREATE TABLE playlist (
     PRIMARY KEY(playlist_id),
     FOREIGN KEY(usuari_id) REFERENCES usuari(usuari_id)
 );
+-- INSERT DATA TO DATABASE
