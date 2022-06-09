@@ -31,9 +31,9 @@ CREATE TABLE videos (
 CREATE TABLE etiquetes (
     etiqueta_id INT NOT NULL AUTO_INCREMENT,
     nom VARCHAR(255) NOT NULL,
-    videos_id INT NOT NULL,
-    PRIMARY KEY(etiqueta_id)
-    FOREIGN KEY(videos_id) REFERENCES videos(video_id)
+    video_id INT NOT NULL,
+    PRIMARY KEY(etiqueta_id),
+    FOREIGN KEY(video_id) REFERENCES videos(video_id)
 );
 CREATE TABLE comentari (
     comentari_id INT NOT NULL AUTO_INCREMENT,
@@ -76,13 +76,13 @@ CREATE TABLE canal (
     PRIMARY KEY(canal_id),
     FOREIGN KEY(usuari_id) REFERENCES usuari(usuari_id)
 );
-CREATE suscripcio (
+CREATE TABLE suscripcio (
     suscripcio_id INT NOT NULL AUTO_INCREMENT,
     canal_id INT NOT NULL,
     PRIMARY KEY(suscripcio_id),
     FOREIGN KEY(canal_id) REFERENCES canal(canal_id)
 );
-CREATE playlist (
+CREATE TABLE playlist (
     playlist_id INT NOT NULL AUTO_INCREMENT,
     nom VARCHAR(255) NOT NULL,
     data_creacio DATE NOT NULL,
