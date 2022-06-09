@@ -4,9 +4,9 @@ Instruccions d'ús: 🧙‍♂️
 
 Primer de tot hem de tenir instalat MySQL afegeixo enllaços dels SO disponibles:
 
-     🪟 : (https://dev.mysql.com/doc/refman/8.0/en/windows-installation.html)
-     🍏 : (https://dev.mysql.com/doc/refman/8.0/en/macos-installation.html)
-     👽 : (https://dev.mysql.com/doc/refman/8.0/en/linux-installation.html)
+     [🪟](https://dev.mysql.com/doc/refman/8.0/en/windows-installation.html)
+     [🍏](https://dev.mysql.com/doc/refman/8.0/en/macos-installation.html)
+     [👽](https://dev.mysql.com/doc/refman/8.0/en/linux-installation.html)
 
 Navegació per carpetes:
 
