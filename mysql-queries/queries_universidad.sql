@@ -14,5 +14,5 @@ SELECT DISTINCT persona.* FROM persona JOIN alumno_se_matricula_asignatura am ON
 -- Resolgui les 6 següents consultes utilitzant les clàusules LEFT JOIN i RIGHT JOIN.
 
 SELECT departamento.nombre, persona.apellido1, persona.apellido2, persona.nombre FROM persona LEFT JOIN profesor ON persona.id = profesor.id_profesor LEFT JOIN departamento ON departamento.id = profesor.id_departamento WHERE persona.tipo = 'profesor' ORDER BY departamento.nombre, persona.apellido1, persona.apellido2, persona.nombre;
-SELECT persona.* 
+SELECT persona.* FROM persona LEFT JOIN profesor ON profesor.id_profesor = persona.id WHERE persona.tipo = 'profesor' AND profesor.id_departamento IS NULL;
 
