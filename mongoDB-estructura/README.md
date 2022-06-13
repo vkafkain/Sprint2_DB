@@ -6,7 +6,9 @@ Primer hem de tenir instalat MongoDB afegeixo enllaços dels SO disponibles:
 
 [Windows](https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-windows/ '🪟')
 [macOs](https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-os-x/ '🍏')
-[Linux](https://www.mongodb.com/docs/manual/administration/install-on-linux/ '👽') 
+[Linux](https://www.mongodb.com/docs/manual/administration/install-on-linux/ '👽')*
+
+* De moment no hi ha versio oficial de MongoDB per la LTS 22.04.
 
 **Navegació per carpetes:**
 
