@@ -12,8 +12,8 @@ Primer hem de tenir instalat MongoDB afegeixo enllaços dels SO disponibles:
 
 **Navegació per carpetes:**
 
-- mongoDB-estructura Aqui podem trobar els esquemes de MongoDB en jpeg i els Scripts.js, amb el nom corresponent de la base de dades.
+mongoDB-estructura Aqui podem trobar els esquemes de MongoDB en jpeg i els Scripts.js, amb el nom corresponent de la base de dades.
 Per executar els diferentes scripts, s'ha d'executar per consola el comandament següent : 
     
-    - mongo localhost:27017/test myjsfile.js
+    mongo localhost:27017/test myjsfile.js
 
