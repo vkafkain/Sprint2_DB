@@ -17,3 +17,7 @@ Per executar els diferentes scripts, s'ha d'executar per consola el comandament 
     
     mongo localhost:27017/test myjsfile.js
 
+Hi ha altres maneres per poder executar el script afegeixo enllaç a la documentació oficial de MongoDB:
+
+[MongoDB-Scripts Shell](https://www.mongodb.com/docs/manual/tutorial/write-scripts-for-the-mongo-shell/)
+
