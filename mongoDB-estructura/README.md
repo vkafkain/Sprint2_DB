@@ -14,7 +14,6 @@ mongoDB-estructura Aquí podem trobar els esquemes de MongoDB en jpeg i els Scri
 Per executar els diferents scripts, s'ha d'executar per consola el comandament següent:
 
     mongo localhost:27017/test myjsfile.js          
-    
 [^2].
 
 Hi ha altres maneres per poder executar el script, afegeixo enllaç a la documentació oficial de MongoDB:
