@@ -8,8 +8,6 @@ Primer hem de tenir instal·lat MongoDB, afegeixo enllaços dels SO disponibles:
 [macOs](https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-os-x/ '🍏')
 [Linux](https://www.mongodb.com/docs/manual/administration/install-on-linux/ '👽')[^1]
 
-
-
 **Navegació per carpetes:**
 
 mongoDB-estructura Aquí podem trobar els esquemes de MongoDB en jpeg i els Scripts.js, amb el nom corresponent de la base de dades.
