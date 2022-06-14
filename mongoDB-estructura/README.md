@@ -1,4 +1,4 @@
-# Entrega 2.3: Estructura de dades MongoDB 📚
+# Entrega 2.3: Estructura de dades MongoDB 🀄
 
 ## Instruccions d'ús: 🧙‍♂️
 
