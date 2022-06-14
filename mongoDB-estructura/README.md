@@ -1,4 +1,4 @@
-# Entrega 2.3: Estructura de dades MongoDB 🀄
+# Entrega 2.3: Estructura de dades MongoDB 📚
 
 ## Instruccions d'ús: 🧙‍♂️
 
@@ -15,7 +15,7 @@ Primer hem de tenir instal·lat MongoDB, afegeixo enllaços dels SO disponibles:
 mongoDB-estructura Aquí podem trobar els esquemes de MongoDB en jpeg i els Scripts.js, amb el nom corresponent de la base de dades.
 Per executar els diferents scripts, s'ha d'executar per consola el comandament següent:
 
-mongo localhost:27017/test myjsfile.js
+    mongo localhost:27017/test myjsfile.js
 
 Hi ha altres maneres per poder executar el script, afegeixo enllaç a la documentació oficial de MongoDB:
 
