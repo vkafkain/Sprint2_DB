@@ -29,4 +29,3 @@ SELECT departamento.nombre AS departamento, COUNT(profesor.id_profesor) AS quant
 SELECT grado.nombre AS grado, COUNT(asignatura.id_grado) AS quantitat_assignatures FROM asignatura RIGHT JOIN grado ON asignatura.id_grado = grado.id GROUP BY grado.id ORDER BY quantitat_assignatures DESC;
 SELECT grado.nombre AS grado, COUNT(*) AS quantitat_assignatures FROM grado JOIN asignatura ON grado.id = asignatura.id_grado GROUP BY grado.id HAVING quantitat_assignatures > 40;
 
-
