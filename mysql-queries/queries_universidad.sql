@@ -15,4 +15,16 @@ SELECT DISTINCT persona.* FROM persona JOIN alumno_se_matricula_asignatura am ON
 
 SELECT departamento.nombre, persona.apellido1, persona.apellido2, persona.nombre FROM persona LEFT JOIN profesor ON persona.id = profesor.id_profesor LEFT JOIN departamento ON departamento.id = profesor.id_departamento WHERE persona.tipo = 'profesor' ORDER BY departamento.nombre, persona.apellido1, persona.apellido2, persona.nombre;
 SELECT persona.* FROM persona LEFT JOIN profesor ON profesor.id_profesor = persona.id WHERE persona.tipo = 'profesor' AND profesor.id_departamento IS NULL;
+SELECT departamento.* FROM departamento LEFT JOIN profesor ON departamento.id = profesor.id_departamento WHERE profesor.id_departamento IS NULL;
+SELECT persona.* FROM persona JOIN profesor ON persona.id = profesor.id_profesor LEFT JOIN asignatura ON profesor.id_profesor = asignatura.id_profesor WHERE asignatura.id IS NULL;
+SELECT * FROM asignatura WHERE id_profesor IS NULL;
+SELECT departamento.* FROM alumno_se_matricula_asignatura am LEFT JOIN asignatura ON am.id_asignatura = asignatura.id LEFT JOIN profesor ON asignatura.id = profesor.id_profesor RIGHT JOIN departamento ON profesor.id_departamento = departamento.id WHERE am.id_curso_escolar IS NULL;
+
+-- Consultes resum
+
+SELECT COUNT(*) FROM persona WHERE persona.tipo = 'alumno';
+SELECT COUNT(*) FROM persona WHERE persona.tipo = 'alumno' AND YEAR(persona.fecha_nacimiento) = 1999;
+SELECT departamento.nombre AS departamento, COUNT(*) AS quantitat_professors FROM departamento LEFT JOIN profesor ON departamento.id = profesor.id_departamento GROUP BY departamento.id ORDER BY quantitat_professors;
+SELECT departamento.nombre AS departamento, COUNT(profesor.id_profesor) AS quantitat_professors FROM departamento LEFT JOIN profesor ON departamento.id = profesor.id_departamento GROUP BY departamento.id;
+SELECT grado.nombre AS grado, COUNT(*) AS quantitat_assignatures FROM grado JOIN asignatura ON asignatura.id_grado = grado.id GROUP BY grado.id; 
 
