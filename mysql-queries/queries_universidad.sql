@@ -26,5 +26,7 @@ SELECT COUNT(*) FROM persona WHERE persona.tipo = 'alumno';
 SELECT COUNT(*) FROM persona WHERE persona.tipo = 'alumno' AND YEAR(persona.fecha_nacimiento) = 1999;
 SELECT departamento.nombre AS departamento, COUNT(*) AS quantitat_professors FROM departamento LEFT JOIN profesor ON departamento.id = profesor.id_departamento GROUP BY departamento.id ORDER BY quantitat_professors;
 SELECT departamento.nombre AS departamento, COUNT(profesor.id_profesor) AS quantitat_professors FROM departamento LEFT JOIN profesor ON departamento.id = profesor.id_departamento GROUP BY departamento.id;
-SELECT grado.nombre AS grado, COUNT(*) AS quantitat_assignatures FROM grado JOIN asignatura ON asignatura.id_grado = grado.id GROUP BY grado.id; 
+SELECT grado.nombre AS grado, COUNT(asignatura.id_grado) AS quantitat_assignatures FROM asignatura RIGHT JOIN grado ON asignatura.id_grado = grado.id GROUP BY grado.id ORDER BY quantitat_assignatures DESC;
+SELECT grado.nombre AS grado, COUNT(*) AS quantitat_assignatures FROM grado JOIN asignatura ON grado.id = asignatura.id_grado GROUP BY grado.id HAVING quantitat_assignatures > 40;
+
 
