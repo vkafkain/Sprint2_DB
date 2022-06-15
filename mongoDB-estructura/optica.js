@@ -96,7 +96,8 @@ db.clients.insert(
                         color: 'blau'
                     }
                 },
-                muntura:  ['flotant'],
+                montura: ['flotant', 'pasta', 'metal·lica'],
+                default: 'flotant',
                 color_muntura: 'groc',
                 preu: 200,
                 empleat_venta:{
@@ -132,7 +133,8 @@ db.clients.insert(
                         color: 'transparent'
                     }
                 },
-                muntura:  ['pasta'],
+                muntura: ['flotant', 'pasta', 'metal·lica'],
+                default: 'pasta',
                 color_muntura: 'negre',
                 preu: 300,
                 empleat_venta:{
@@ -168,7 +170,8 @@ db.clients.insert(
                         color: 'negre',
                     }
                 },
-                muntura:  ['metal·lica'],
+                muntura: ['flotant', 'pasta', 'metal·lica'],
+                default: 'metal·lica',
                 color_muntura: 'gris',
                 preu: 400,
                 empleat_venta:{
@@ -204,7 +207,8 @@ db.clients.insert(
                         color: 'transparent',
                     }
                 },
-                muntura:  ['metal·lica'],
+                muntura: ['flotant', 'pasta', 'metal·lica'],
+                default: 'flotant',
                 color_muntura: 'blanc',
                 preu: 1500,
                 empleat_venta:{
