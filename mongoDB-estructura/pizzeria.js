@@ -212,6 +212,10 @@ db.botigues.insert(
                     _id: ObjectId("000000000000000000000001"),
                     data: '12/12/2012',
                     hora: '12:00',
+                    client_comanda:{
+                        $ref: 'clients',
+                        _id: ObjectId("000000000000000000000001")
+                    },
                     tipus_comanda: {
                         tipus: ['domicili', 'botiga'],
                         default: 'domicili',
@@ -280,6 +284,10 @@ db.botigues.insert(
                     _id: ObjectId("000000000000000000000002"),
                     data: '12/12/2019',
                     hora: '21:20',
+                    client_comanda:{
+                        $ref: 'clients',
+                        _id: ObjectId("000000000000000000000002")
+                    },
                     tipus_comanda: {
                         tipus: ['domicili', 'botiga'],
                         default: 'domicili',
