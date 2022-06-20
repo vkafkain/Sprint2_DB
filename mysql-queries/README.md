@@ -2,7 +2,7 @@
 
 ## Instruccions d'ús: 🧙‍♂️
 
-Primer devem de tenir instalat MySQL afegeixo enllaços dels SO disponibles:
+Primer hem de tenir instal·lat MySQL afegeixo enllaços dels SO disponibles:
 
  [Windows](https://dev.mysql.com/doc/refman/8.0/en/windows-installation.html '🪟')
  [macOs](https://dev.mysql.com/doc/refman/8.0/en/macos-installation.html '🍏')
@@ -16,7 +16,7 @@ Primer devem de tenir instalat MySQL afegeixo enllaços dels SO disponibles:
     - Tienda:   mysql -uroot -p123456 < schema_tienda.sql
     - Universidad:  mysql -uroot -p123456 < schema_universidad.sql
 
-* Per fer funcionar les queries hem d'obrir la terminal i fer servir el següents comandaments:
+* Per fer funcionar les queries hem d'obrir la terminal i fer servir els següents comandaments:
     - Tienda : mysql -uroot -p123456 < queries_tienda.sql
     - Universidad : mysql -uroot -p123456 < queries_universidad.sql
 
