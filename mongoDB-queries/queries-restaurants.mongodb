@@ -1,2 +1,2 @@
 use("restaurants")
-db.restaurants.find({}, {name: 1, borough: 1, cuisine: 1})
+db.restaurants.find().sort( {name: -1 } );
